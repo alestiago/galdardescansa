@@ -100,6 +100,17 @@ h1 {
   line-height: 1.5;
 }
 
+.legal-updated {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.legal-updated + .intro {
+  margin-top: 0.85rem;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -110,6 +121,20 @@ h1 {
 .detail-actions {
   display: flex;
   margin-top: 1.5rem;
+}
+
+.page-end-actions {
+  padding: 1.5rem 2.5rem 2.5rem;
+  background: #ffffff;
+}
+
+.page-end-actions .header-cta {
+  display: flex;
+  width: 100%;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .header-cta {
@@ -887,6 +912,10 @@ button:focus-visible {
   .signature-form,
   .legal-content {
     padding: 1.5rem;
+  }
+
+  .page-end-actions {
+    padding: 1rem 1.5rem 1.5rem;
   }
 
   .back-nav {
