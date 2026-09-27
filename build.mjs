@@ -18,6 +18,7 @@ const publicFiles = [
   "apple-touch-icon.png",
   "keys/public-key.pem",
   "assets/arrow_back.svg",
+  "assets/close.svg",
   "assets/sardina.jpg",
 ];
 

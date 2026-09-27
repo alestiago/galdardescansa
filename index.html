@@ -320,22 +320,62 @@
             </p>
           </noscript>
           <button type="submit" disabled>Firmar la petición</button>
+          <p class="form-legal-note">
+            La ley establece que del ejercicio del derecho de petición no puede
+            derivarse perjuicio alguno para las personas firmantes y permite
+            exigir la confidencialidad de sus datos
+            (<a
+              href="https://www.boe.es/buscar/act.php?id=BOE-A-2001-21090#a1"
+              target="_blank"
+              rel="noopener noreferrer"
+              >artículo 1</a
+            >
+            y
+            <a
+              href="https://www.boe.es/buscar/act.php?id=BOE-A-2001-21090#a4"
+              target="_blank"
+              rel="noopener noreferrer"
+              >artículo 4.4</a
+            >
+            de la Ley Orgánica 4/2001).
+          </p>
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-          <div class="form-success-actions" id="form-success-actions" hidden>
-            <p>
-              Ayuda a que esta petición llegue más lejos: compártela con familiares
-              y amigos.
-            </p>
-            <button id="share-petition" type="button">Compartir la petición</button>
-            <p
-              class="share-feedback"
-              id="share-feedback"
-              role="status"
-              aria-live="polite"
-            ></p>
-          </div>
         </form>
       </section>
     </main>
+
+    <dialog
+      class="success-modal"
+      id="success-modal"
+      aria-labelledby="success-modal-title"
+      aria-describedby="success-modal-description"
+    >
+      <div class="success-modal__content">
+        <button
+          class="success-modal__close"
+          id="close-success-modal"
+          type="button"
+          aria-label="Cerrar confirmación"
+        >
+          <img src="assets/close.svg" alt="" width="24" height="24" />
+        </button>
+        <p class="eyebrow">Firma enviada</p>
+        <h2 id="success-modal-title">Gracias por firmar</h2>
+        <p id="success-modal-description">
+          Tu firma se ha enviado correctamente.
+        </p>
+        <p class="success-modal__share-copy">
+          Ayuda a que esta petición llegue más lejos: compártela con familiares y
+          amigos.
+        </p>
+        <button id="share-petition" type="button">Compartir la petición</button>
+        <p
+          class="share-feedback"
+          id="share-feedback"
+          role="status"
+          aria-live="polite"
+        ></p>
+      </div>
+    </dialog>
   </body>
 </html>

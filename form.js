@@ -2,7 +2,10 @@ const form = document.querySelector("#signature-form");
 const statusMessage = document.querySelector("#form-status");
 const submitButton = form.querySelector('button[type="submit"]');
 const updatesConsent = document.querySelector("#updates-consent");
-const successActions = document.querySelector("#form-success-actions");
+const successModal = document.querySelector("#success-modal");
+const closeSuccessModalButton = document.querySelector(
+  "#close-success-modal",
+);
 const shareButton = document.querySelector("#share-petition");
 const shareFeedback = document.querySelector("#share-feedback");
 
@@ -217,11 +220,19 @@ Object.values(fields).forEach((field) => {
   });
 });
 
-function resetShareActions() {
-  successActions.hidden = true;
+function resetSuccessModal() {
+  if (successModal.open) successModal.close();
   shareFeedback.textContent = "";
   shareButton.textContent = "Compartir la petición";
 }
+
+closeSuccessModalButton.addEventListener("click", () => {
+  successModal.close();
+});
+
+successModal.addEventListener("click", (event) => {
+  if (event.target === successModal) successModal.close();
+});
 
 shareButton.addEventListener("click", async () => {
   const shareUrl =
@@ -262,7 +273,7 @@ shareButton.addEventListener("click", async () => {
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
   statusMessage.className = "form-status";
-  resetShareActions();
+  resetSuccessModal();
 
   const validity = Object.values(fields).map(validateField);
   const firstInvalidField = Object.values(fields).find(
@@ -305,10 +316,8 @@ form.addEventListener("submit", async (event) => {
       field.error.textContent = "";
       field.input.setAttribute("aria-invalid", "false");
     });
-    statusMessage.textContent =
-      "Gracias por firmar. Tu firma se ha enviado correctamente.";
-    statusMessage.classList.add("form-status--success");
-    successActions.hidden = false;
+    statusMessage.textContent = "";
+    successModal.showModal();
   } catch (error) {
     console.error("Unable to submit the signature form", error);
     statusMessage.textContent =

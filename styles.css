@@ -797,6 +797,26 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
+.form-legal-note {
+  margin: 0.65rem auto 0;
+  max-width: 42rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.form-legal-note a {
+  color: inherit;
+  font-weight: 650;
+  text-underline-offset: 0.18em;
+}
+
+.form-legal-note a:hover {
+  color: var(--ink);
+  text-decoration-thickness: 2px;
+}
+
 .form-status {
   min-height: 1.5rem;
   margin: 1rem 0 0;
@@ -807,31 +827,79 @@ button:focus-visible {
   color: var(--error);
 }
 
-.form-status--success {
-  color: var(--success);
-  font-weight: 700;
+.success-modal {
+  width: min(calc(100% - 2rem), 32rem);
+  max-height: calc(100dvh - 2rem);
+  margin: auto;
+  padding: 0;
+  overflow: auto;
+  background: #ffffff;
+  border: 1px solid #111111;
+  border-radius: 0;
+  color: var(--ink);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.3);
 }
 
-.form-success-actions {
-  margin-top: 1rem;
-  padding: 1rem;
-  background: #f4f3ef;
-  border: 1px solid var(--border);
+.success-modal::backdrop {
+  background: rgba(17, 17, 17, 0.68);
+  backdrop-filter: blur(2px);
+}
+
+.success-modal__content {
+  position: relative;
+  padding: 2.25rem;
   text-align: center;
 }
 
-.form-success-actions[hidden] {
-  display: none;
+.success-modal__content .eyebrow {
+  margin-bottom: 0.65rem;
 }
 
-.form-success-actions p {
+.success-modal h2 {
   margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.75rem, 6vw, 2.4rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
 }
 
-.form-success-actions button {
-  width: auto;
-  min-height: 46px;
-  margin-top: 0.75rem;
+.success-modal__content > p:not(.eyebrow, .share-feedback) {
+  margin: 0.85rem 0 0;
+  color: var(--muted);
+}
+
+.success-modal__share-copy {
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--border);
+}
+
+.success-modal__content > #share-petition {
+  margin-top: 1rem;
+}
+
+.success-modal__close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  display: grid;
+  width: 2.5rem;
+  min-height: 2.5rem;
+  place-items: center;
+  margin: 0;
+  padding: 0.45rem;
+  background: transparent;
+  border-color: transparent;
+}
+
+.success-modal__close img {
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.success-modal__close:hover img {
+  filter: invert(1);
 }
 
 .share-feedback {
@@ -916,6 +984,10 @@ button:focus-visible {
 
   .page-end-actions {
     padding: 1rem 1.5rem 1.5rem;
+  }
+
+  .success-modal__content {
+    padding: 2rem 1.5rem 1.5rem;
   }
 
   .back-nav {
