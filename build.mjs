@@ -2,18 +2,22 @@ import { mkdir, readFile, rm, writeFile, copyFile } from "node:fs/promises";
 import { dirname, extname, join } from "node:path";
 
 const outputDirectory = "dist";
+// Only this explicit allowlist is published. Documentation, local tools,
+// private keys, and CSV exports must remain outside the deploy directory.
 const publicFiles = [
   "index.html",
   "privacy.html",
   "que-esta-pasando.html",
   "styles.css",
-  "script.js",
+  "form.js",
   "noise-meter.js",
   "og.png",
   "favicon.svg",
   "favicon.ico",
   "favicon-32x32.png",
   "apple-touch-icon.png",
+  "keys/public-key.pem",
+  "assets/arrow_back.svg",
   "assets/sardina.jpg",
 ];
 
@@ -42,7 +46,9 @@ for (const file of publicFiles) {
                   ? "image/svg+xml"
                   : extname(file) === ".ico"
                     ? "image/x-icon"
-                    : "image/png",
+                    : extname(file) === ".pem"
+                      ? "text/plain; charset=utf-8"
+                      : "image/png",
     };
     await mkdir(dirname(join(outputDirectory, "public", file)), {
       recursive: true,

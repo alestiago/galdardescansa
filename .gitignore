@@ -12,6 +12,10 @@ dist/
 .env.*
 !.env.example
 
+# Private encryption material and decrypted form exports
+/keys/private-key.pem
+/petition-signature*.csv
+*.decrypted.csv
+
 # Operating-system files
 .DS_Store
-

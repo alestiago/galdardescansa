@@ -46,7 +46,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <script src="script.js" defer></script>
+    <script src="form.js" defer></script>
     <script src="noise-meter.js" defer></script>
   </head>
   <body>
@@ -146,7 +146,9 @@
 
             <p class="sound-comparison__note">
               El
-              <a href="que-esta-pasando.html#limites-nocturnos">límite legal</a>
+              <a href="que-esta-pasando.html#limites-nocturnos"
+                >límite legal nocturno</a
+              >
               en dormitorios es de 30 dB(A), mientras que las mediciones vecinales
               registraron una media aproximada de 66,9 dB(A) (unas 4.900 veces más
               energía sonora, al tratarse de una
@@ -160,7 +162,34 @@
           </figure>
         </header>
 
-        <form class="signature-form" id="signature-form" novalidate>
+        <form
+          class="signature-form"
+          id="signature-form"
+          name="petition-signature"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          novalidate
+        >
+          <input type="hidden" name="form-name" value="petition-signature" />
+          <input type="hidden" name="cryptoVersion" value="" />
+          <input type="hidden" name="algorithm" value="" />
+          <input type="hidden" name="keyId" value="" />
+          <input type="hidden" name="iv" value="" />
+          <input type="hidden" name="encryptedKey" value="" />
+          <input type="hidden" name="encryptedPayload" value="" />
+          <p class="honeypot" aria-hidden="true">
+            <label>
+              No rellenes este campo:
+              <input
+                name="bot-field"
+                type="text"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </label>
+          </p>
+
           <div class="form-grid">
             <div class="field">
               <label for="name">
@@ -169,7 +198,6 @@
               </label>
               <input
                 id="name"
-                name="name"
                 type="text"
                 autocomplete="given-name"
                 required
@@ -179,12 +207,12 @@
 
             <div class="field">
               <label for="surnames">
-                Apellidos <span class="required-marker" aria-hidden="true">*</span>
+                Apellidos
+                <span class="required-marker" aria-hidden="true">*</span>
                 <span class="sr-only">(obligatorio)</span>
               </label>
               <input
                 id="surnames"
-                name="surnames"
                 type="text"
                 autocomplete="family-name"
                 required
@@ -194,12 +222,12 @@
 
             <div class="field field--full">
               <label for="identity-document">
-                DNI o NIE <span class="required-marker" aria-hidden="true">*</span>
+                DNI o NIE
+                <span class="required-marker" aria-hidden="true">*</span>
                 <span class="sr-only">(obligatorio)</span>
               </label>
               <input
                 id="identity-document"
-                name="identityDocument"
                 type="text"
                 autocomplete="off"
                 inputmode="text"
@@ -213,13 +241,12 @@
 
             <div class="field field--full">
               <label for="address">
-                Dirección del domicilio afectado
+                Dirección
                 <span class="required-marker" aria-hidden="true">*</span>
                 <span class="sr-only">(obligatorio)</span>
               </label>
               <input
                 id="address"
-                name="address"
                 type="text"
                 autocomplete="street-address"
                 required
@@ -231,7 +258,6 @@
               <label for="phone">Teléfono <span>(opcional)</span></label>
               <input
                 id="phone"
-                name="phone"
                 type="tel"
                 autocomplete="tel"
                 inputmode="tel"
@@ -247,7 +273,6 @@
               </label>
               <input
                 id="email"
-                name="email"
                 type="email"
                 autocomplete="email"
                 required
@@ -259,7 +284,6 @@
           <div class="consent-field">
             <input
               id="privacy-consent"
-              name="privacyConsent"
               type="checkbox"
               aria-describedby="privacy-consent-error"
               required
@@ -279,9 +303,7 @@
           <div class="consent-field">
             <input
               id="updates-consent"
-              name="updatesConsent"
               type="checkbox"
-              value="accepted"
             />
             <div class="consent-field__copy">
               <label for="updates-consent">
@@ -292,8 +314,26 @@
             </div>
           </div>
 
-          <button type="submit">Firmar la petición</button>
+          <noscript>
+            <p class="form-status form-status--error">
+              Necesitas activar JavaScript para cifrar y enviar la firma.
+            </p>
+          </noscript>
+          <button type="submit" disabled>Firmar la petición</button>
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          <div class="form-success-actions" id="form-success-actions" hidden>
+            <p>
+              Ayuda a que esta petición llegue más lejos: compártela con familiares
+              y amigos.
+            </p>
+            <button id="share-petition" type="button">Compartir la petición</button>
+            <p
+              class="share-feedback"
+              id="share-feedback"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </div>
         </form>
       </section>
     </main>

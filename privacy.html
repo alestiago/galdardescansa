@@ -24,7 +24,14 @@
     <main class="page-shell">
       <article class="petition legal-page" aria-labelledby="privacy-title">
         <a class="back-nav" href="index.html">
-          <span aria-hidden="true">←</span> Volver
+          <img
+            class="back-nav__icon"
+            src="assets/arrow_back.svg"
+            alt=""
+            width="24"
+            height="24"
+          />
+          <span>Volver</span>
         </a>
 
         <header class="petition__header">
@@ -55,13 +62,45 @@
 
           <section>
             <h2>Datos recogidos</h2>
+            <ol class="privacy-data-list">
+              <li>
+                <strong>Nombre y apellidos:</strong> permiten identificar a la
+                persona firmante y atribuir correctamente su apoyo a la
+                reclamación.
+              </li>
+              <li>
+                <strong>DNI o NIE:</strong> permite individualizar la firma,
+                detectar duplicados y respaldar su validez ante el Ayuntamiento.
+              </li>
+              <li>
+                <strong>Dirección:</strong> permite acreditar la vinculación con la
+                zona afectada y contextualizar territorialmente la reclamación.
+              </li>
+              <li>
+                <strong>Correo electrónico:</strong> permite gestionar la firma,
+                atender solicitudes de retirada o eliminación y contactar con la
+                persona firmante si fuera necesario.
+              </li>
+              <li>
+                <strong>Teléfono, opcional:</strong> se utilizará para enviar
+                novedades por WhatsApp únicamente si también se acepta expresamente
+                recibir comunicaciones.
+              </li>
+              <li>
+                <strong>Consentimiento de privacidad:</strong> registra la
+                autorización necesaria para tratar los datos y presentar la firma
+                al Ayuntamiento.
+              </li>
+              <li>
+                <strong>Consentimiento para recibir novedades, opcional:</strong>
+                registra la autorización para recibir comunicaciones relacionadas
+                exclusivamente con esta reclamación por correo electrónico o
+                WhatsApp.
+              </li>
+            </ol>
             <p>
-              La petición recoge nombre, apellidos, DNI o NIE, dirección del
-              domicilio afectado y correo electrónico. El teléfono es opcional.
               Solo se trasladarán al Ayuntamiento los datos necesarios para
-              presentar y respaldar la reclamación. El correo electrónico y, si se
-              ha facilitado, el teléfono se usarán para enviar novedades únicamente
-              cuando se haya prestado el consentimiento opcional.
+              presentar y respaldar la reclamación.
             </p>
           </section>
 
@@ -74,6 +113,32 @@
               los datos técnicos propios del servicio serán tratados por WhatsApp
               como proveedor de la plataforma de comunicación, conforme a sus
               condiciones y política de privacidad.
+            </p>
+          </section>
+
+          <section>
+            <h2>Cifrado y proveedor técnico del formulario</h2>
+            <p>
+              Los datos introducidos en el formulario se cifran en tu navegador
+              antes de enviarse. El contenido se protege mediante AES-256-GCM y la
+              clave utilizada para cada firma se cifra con una clave pública
+              RSA-OAEP. Solo la persona responsable de la iniciativa, que conserva
+              la clave privada fuera del sitio web, puede descifrar el contenido.
+            </p>
+            <p>
+              La recepción técnica de las firmas se gestiona mediante Netlify
+              Forms. Netlify almacena temporalmente el contenido cifrado junto con
+              los metadatos técnicos necesarios para procesar el envío, como la
+              fecha y hora. Como Netlify no dispone de la clave privada, no puede
+              descifrar ni interpretar los datos personales enviados en el
+              formulario. Netlify actúa como proveedor de infraestructura y aplica
+              las garantías descritas en su
+              <a
+                href="https://www.netlify.com/gdpr-ccpa/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >información sobre protección de datos</a
+              >.
             </p>
           </section>
 
@@ -96,10 +161,11 @@
               Los datos se conservarán únicamente durante el tiempo necesario para
               preparar y presentar la reclamación. Una vez presentada ante el
               Ayuntamiento de Gáldar, los datos conservados para esta recogida de
-              firmas serán eliminados. Si has aceptado recibir novedades, se
-              conservarán únicamente tus datos de contacto y el registro de ese
-              consentimiento hasta que finalice la iniciativa o retires el
-              consentimiento; después serán eliminados.
+              firmas, incluidas las copias almacenadas en Netlify Forms, serán
+              eliminados. Si has aceptado recibir novedades, se conservarán
+              únicamente tus datos de contacto y el registro de ese consentimiento
+              hasta que finalice la iniciativa o retires el consentimiento;
+              después serán eliminados.
             </p>
           </section>
         </div>
