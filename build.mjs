@@ -1,8 +1,21 @@
 import { mkdir, readFile, rm, writeFile, copyFile } from "node:fs/promises";
-import { extname, join } from "node:path";
+import { dirname, extname, join } from "node:path";
 
 const outputDirectory = "dist";
-const publicFiles = ["index.html", "styles.css", "script.js", "og.png"];
+const publicFiles = [
+  "index.html",
+  "privacy.html",
+  "que-esta-pasando.html",
+  "styles.css",
+  "script.js",
+  "noise-meter.js",
+  "og.png",
+  "favicon.svg",
+  "favicon.ico",
+  "favicon-32x32.png",
+  "apple-touch-icon.png",
+  "assets/sardina.jpg",
+];
 
 await rm(outputDirectory, { recursive: true, force: true });
 await mkdir(join(outputDirectory, "server"), { recursive: true });
@@ -23,8 +36,17 @@ for (const file of publicFiles) {
             ? "text/css; charset=utf-8"
             : extname(file) === ".js"
               ? "text/javascript; charset=utf-8"
-              : "image/png",
+              : extname(file) === ".jpg"
+                ? "image/jpeg"
+                : extname(file) === ".svg"
+                  ? "image/svg+xml"
+                  : extname(file) === ".ico"
+                    ? "image/x-icon"
+                    : "image/png",
     };
+    await mkdir(dirname(join(outputDirectory, "public", file)), {
+      recursive: true,
+    });
     await copyFile(file, join(outputDirectory, "public", file));
   } catch (error) {
     if (error.code !== "ENOENT") throw error;

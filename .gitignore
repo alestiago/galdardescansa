@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Generated build output
+dist/
+
+# Netlify local state
+.netlify/
+
+# Local environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Operating-system files
+.DS_Store
+

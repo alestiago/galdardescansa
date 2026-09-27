@@ -49,10 +49,18 @@ const fields = {
         : "Introduce un correo electrónico válido.";
     },
   },
+  privacyConsent: {
+    input: document.querySelector("#privacy-consent"),
+    error: document.querySelector("#privacy-consent-error"),
+    requiredMessage: "Debes aceptar la política de privacidad para continuar.",
+  },
 };
 
 function validateField(field) {
-  const value = field.input.value.trim();
+  const value =
+    field.input.type === "checkbox"
+      ? field.input.checked
+      : field.input.value.trim();
   let message = "";
 
   if (field.input.required && !value) {

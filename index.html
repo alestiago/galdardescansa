@@ -5,61 +5,168 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Recogida de firmas para solicitar al Ayuntamiento de Gáldar medidas frente a las molestias por ruido en futuros eventos."
+      content="Recogida de firmas para exigir al Ayuntamiento de Gáldar medidas frente a las molestias por ruido en futuros eventos."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Sardina Quiere Descansar" />
+    <meta property="og:title" content="Gáldar Quiere Descansar" />
     <meta
       property="og:description"
       content="Una petición vecinal por el descanso. Tu firma ayuda a trasladar la petición al Ayuntamiento de Gáldar."
     />
     <meta
       property="og:url"
-      content="https://sardina-quiere-descansar.vocal-fox-3958.chatgpt.site"
+      content="https://galdarquieredescansar.com"
     />
     <meta
       property="og:image"
-      content="https://sardina-quiere-descansar.vocal-fox-3958.chatgpt.site/og.png"
+      content="https://galdarquieredescansar.com/og.png"
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Sardina Quiere Descansar" />
+    <meta property="og:image:alt" content="Gáldar Quiere Descansar" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Sardina Quiere Descansar" />
+    <meta name="twitter:title" content="Gáldar Quiere Descansar" />
     <meta
       name="twitter:description"
       content="Una petición vecinal por el descanso."
     />
     <meta
       name="twitter:image"
-      content="https://sardina-quiere-descansar.vocal-fox-3958.chatgpt.site/og.png"
+      content="https://galdarquieredescansar.com/og.png"
     />
-    <title>Sardina Quiere Descansar</title>
+    <title>Gáldar Quiere Descansar</title>
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
+    <script src="noise-meter.js" defer></script>
   </head>
   <body>
     <main class="page-shell">
       <section class="petition" aria-labelledby="page-title">
         <header class="petition__header">
-          <p class="eyebrow">Petición vecinal</p>
-          <h1 id="page-title">Sardina Quiere Descansar</h1>
+          <p class="eyebrow">Gáldar Quiere Descansar</p>
+          <h1 id="page-title">Los galdenses se merecen descansar</h1>
           <p class="intro">
-            Estamos recogiendo firmas para pedir al Ayuntamiento de Gáldar medidas
+            Estamos recogiendo firmas para exigir al Ayuntamiento de Gáldar medidas
             para solucionar las molestias por ruido en futuros eventos. Tu firma
             ayuda a trasladar la petición.
           </p>
+          <div class="hero-actions">
+            <a class="header-cta" href="#signature-form">Firmar</a>
+            <a class="header-cta" href="que-esta-pasando.html">¿Qué ocurre?</a>
+          </div>
+
+          <figure class="sound-comparison" aria-label="Comparación del ruido nocturno">
+            <div class="sound-meter__readout">
+              <div class="sound-meter__details">
+                <span class="sound-meter__simulation"
+                  >Recreación visual aproximada</span
+                >
+                <time
+                  id="sound-meter-time"
+                  datetime="2026-09-27T03:10:00+01:00"
+                  >DOM 27 SEP 2026 · 03:10 AM</time
+                >
+                <span class="sound-meter__location"
+                  >Sardina del Norte, Gáldar (Dormitorio)</span
+                >
+              </div>
+              <p class="sound-meter__level">
+                <span class="sound-meter__level-label">Nivel actual</span>
+                <span class="sound-meter__level-value">
+                  <strong id="sound-meter-level">63,4</strong>
+                  <span class="sound-meter__level-unit">dB(A)</span>
+                </span>
+              </p>
+            </div>
+
+            <div
+              class="sound-bar"
+              id="sound-meter"
+              role="meter"
+              aria-label="Reproducción del nivel de ruido interior entre las 03:10 am y las 03:20 am, con una media aproximada de 66,9 decibelios y un máximo de 83,4 decibelios."
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="63.4"
+            >
+              <span class="sound-bar__allowed" aria-hidden="true">
+                <span class="sound-bar__zone-label">Legal</span>
+              </span>
+              <span class="sound-bar__excess" aria-hidden="true">
+                <span class="sound-bar__zone-label">Ilegal</span>
+              </span>
+              <span class="sound-bar__remaining" aria-hidden="true"></span>
+              <span class="sound-bar__minor-ticks" aria-hidden="true"></span>
+              <span class="sound-bar__current-marker" aria-hidden="true"></span>
+              <span class="sound-bar__peak" aria-hidden="true">
+                <span class="sound-bar__peak-label"
+                  >Pico <strong id="sound-meter-peak">63,4</strong></span
+                >
+              </span>
+              <span class="sound-bar__ticks" aria-hidden="true">
+                <span class="sound-bar__tick sound-bar__tick--edge"></span>
+                <span class="sound-bar__tick"></span>
+                <span class="sound-bar__tick"></span>
+                <span class="sound-bar__tick sound-bar__tick--reference"></span>
+                <span class="sound-bar__tick"></span>
+                <span class="sound-bar__tick"></span>
+                <span class="sound-bar__tick"></span>
+                <span class="sound-bar__tick"></span>
+                <span class="sound-bar__tick"></span>
+                <span class="sound-bar__tick"></span>
+                <span class="sound-bar__tick sound-bar__tick--edge"></span>
+              </span>
+            </div>
+
+            <div class="sound-bar__scale" aria-hidden="true">
+              <span>0</span>
+              <span>10</span>
+              <span>20</span>
+              <span>30</span>
+              <span>40</span>
+              <span>50</span>
+              <span>60</span>
+              <span>70</span>
+              <span>80</span>
+              <span>90</span>
+              <span class="sound-bar__scale-end">
+                100
+                <small class="sound-bar__unit">dB(A)</small>
+              </span>
+            </div>
+
+            <p class="sound-comparison__note">
+              El
+              <a href="que-esta-pasando.html#limites-nocturnos">límite legal</a>
+              en dormitorios es de 30 dB(A), mientras que las mediciones vecinales
+              registraron una media aproximada de 66,9 dB(A) (unas 4.900 veces más
+              energía sonora, al tratarse de una
+              <a
+                href="https://www.insst.es/documents/94886/96076/Ruido%2Ben%2Blos%2Bsectores%2Bde%2Bla%2Bm%C3%BAsica%2By%2Bel%2Bocio.%2BC%C3%B3digo%2Bde%2Bconducta%2Bcon%2Borientaciones%2Bpr%C3%A1cticas%2Bpara%2Bel%2Bcumplimiento%2Bdel%2BReal%2BDecreto%2B286-2006/ed554b9d-7b11-478d-a9c1-02671e5f8b90"
+                target="_blank"
+                rel="noopener noreferrer"
+                >escala logarítmica</a
+              >).
+            </p>
+          </figure>
         </header>
 
         <form class="signature-form" id="signature-form" novalidate>
-          <p class="privacy-note">
-            Los datos se usarán únicamente para presentar esta solicitud al
-            Ayuntamiento de Gáldar.
-          </p>
-
           <div class="form-grid">
             <div class="field">
-              <label for="name">Nombre</label>
+              <label for="name">
+                Nombre <span class="required-marker" aria-hidden="true">*</span>
+                <span class="sr-only">(obligatorio)</span>
+              </label>
               <input
                 id="name"
                 name="name"
@@ -71,7 +178,10 @@
             </div>
 
             <div class="field">
-              <label for="surnames">Apellidos</label>
+              <label for="surnames">
+                Apellidos <span class="required-marker" aria-hidden="true">*</span>
+                <span class="sr-only">(obligatorio)</span>
+              </label>
               <input
                 id="surnames"
                 name="surnames"
@@ -83,7 +193,10 @@
             </div>
 
             <div class="field field--full">
-              <label for="identity-document">DNI o NIE</label>
+              <label for="identity-document">
+                DNI o NIE <span class="required-marker" aria-hidden="true">*</span>
+                <span class="sr-only">(obligatorio)</span>
+              </label>
               <input
                 id="identity-document"
                 name="identityDocument"
@@ -99,7 +212,11 @@
             </div>
 
             <div class="field field--full">
-              <label for="address">Dirección del domicilio afectado</label>
+              <label for="address">
+                Dirección del domicilio afectado
+                <span class="required-marker" aria-hidden="true">*</span>
+                <span class="sr-only">(obligatorio)</span>
+              </label>
               <input
                 id="address"
                 name="address"
@@ -123,7 +240,11 @@
             </div>
 
             <div class="field">
-              <label for="email">Correo electrónico</label>
+              <label for="email">
+                Correo electrónico
+                <span class="required-marker" aria-hidden="true">*</span>
+                <span class="sr-only">(obligatorio)</span>
+              </label>
               <input
                 id="email"
                 name="email"
@@ -132,6 +253,42 @@
                 required
               />
               <span class="error" id="email-error"></span>
+            </div>
+          </div>
+
+          <div class="consent-field">
+            <input
+              id="privacy-consent"
+              name="privacyConsent"
+              type="checkbox"
+              aria-describedby="privacy-consent-error"
+              required
+            />
+            <div class="consent-field__copy">
+              <label for="privacy-consent">
+                He leído la <a href="privacy.html">Política de privacidad</a> y
+                autorizo el uso de mis datos únicamente para presentar esta
+                solicitud al Ayuntamiento de Gáldar.
+                <span class="required-marker" aria-hidden="true">*</span>
+                <span class="sr-only">(obligatorio)</span>
+              </label>
+              <span class="error" id="privacy-consent-error"></span>
+            </div>
+          </div>
+
+          <div class="consent-field">
+            <input
+              id="updates-consent"
+              name="updatesConsent"
+              type="checkbox"
+              value="accepted"
+            />
+            <div class="consent-field__copy">
+              <label for="updates-consent">
+                Acepto recibir novedades relacionadas con esta reclamación por
+                correo electrónico o, si he facilitado mi teléfono, por WhatsApp.
+                <span>(opcional)</span>
+              </label>
             </div>
           </div>
 
